@@ -10,34 +10,10 @@ import PageThreeComponent from '../CardsComponents/PageThreeComponent'
 import PageFourComponent from '../CardsComponents/PageFourComponent'
 import PageFiveComponent from '../CardsComponents/PageFiveComponent'
 
-function Index() {
+function index() {
   // Open targated component hook
   const [openComponent, setopenComponent] = useState(1)
   // Open targated component hook
-
-    // states to POST data
-    const [product, setProduct] = useState()
-    const [propertyType, setPropertyType] = useState()
-    const [cost, setCost] = useState(25000)
-    const [name, setName] = useState()
-    const [contact, setContact] = useState()
-    const [email, setEmail] = useState()
-    const [address, setinpAddress] = useState()
-    const [place, setPlace] = useState()
-    const [city, setCity] = useState()
-    const [state, setState] = useState()
-    const [zipCode, setzipCode] = useState()
-    const [home_value, sethomeCost] = useState(50000)
-
-    // *********
-    const _formatCurrency = home_value => {
-      return (
-        "$" +
-        parseFloat(home_value)
-          .toFixed(2)
-          .replace(/(\d)(?=(\d{3})+\.)/g, "$1,")
-      )
-    }
 
   return (
     <>
@@ -55,38 +31,38 @@ function Index() {
             {openComponent === 1 ? (
               <PageOneComponent
                 setopenComponent={setopenComponent}
-                setProduct={setProduct}
+                // setProduct={setProduct}
               />
             ) : openComponent === 2 ? (
               <PageTwoComponent
-                setopenComponent={setopenComponent}
-                setPropertyType={setPropertyType}
+                // setopenComponent={setopenComponent}
+                // setPropertyType={setPropertyType}
               />
             ) : openComponent === 3 ? (
               <PageThreeComponent
-                setopenComponent={setopenComponent}
-                sethomeCost={sethomeCost}
-                home_value={home_value}
-                _formatCurrency={_formatCurrency}
+                // setopenComponent={setopenComponent}
+                // sethomeCost={sethomeCost}
+                // home_value={home_value}
+                // _formatCurrency={_formatCurrency}
               />
             ) : openComponent === 4 ? (
               <PageFourComponent
-                setopenComponent={setopenComponent}
-                setCost={setCost}
-                cost={cost}
-                _formatCurrency={_formatCurrency}
+                // setopenComponent={setopenComponent}
+                // setCost={setCost}
+                // cost={cost}
+                // _formatCurrency={_formatCurrency}
               />
             ) : (
               <PageFiveComponent
-              setName={setName}
-              setContact={setContact}
-              setEmail={setEmail}
-              setinpAddress={setinpAddress}
+              // setName={setName}
+              // setContact={setContact}
+              // setEmail={setEmail}
+              // setinpAddress={setinpAddress}
               // handleLandingPageData={handleLandingPageData}
-              setPlace={setPlace}
-              setCity={setCity}
-              setState={setState}
-              setzipCode={setzipCode}
+              // setPlace={setPlace}
+              // setCity={setCity}
+              // setState={setState}
+              // setzipCode={setzipCode}
               />
             )}
             {/* ******************************* */}
@@ -152,4 +128,4 @@ function Index() {
   )
 }
 
-export default Index;
+export default index
