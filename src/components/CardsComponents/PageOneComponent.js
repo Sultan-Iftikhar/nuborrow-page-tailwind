@@ -9,7 +9,7 @@ import { strings } from '../../Utils/String'
 function PageOneComponent({ setopenComponent, setProduct }) {
   return (
     <>
-      <div className="border-[#ECECEC] border-[8px] rounded-3xl">
+      <div className="sm:border-[#ECECEC] sm:border-[8px] sm:bg-[#ffffff] rounded-3xl">
         <div className="font-bold mt-7 w-[90%] mx-auto md:text-2xl text-xl">
           What can we help you with?
         </div>

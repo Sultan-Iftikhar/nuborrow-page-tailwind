@@ -8,7 +8,7 @@ function index() {
       <section className="bg-white w-[100%]">
         <div className="container md:w-[90%] mx-auto flex flex-wrap px-5 py-5">
           <div className="md:w-1/2 md:pr-12 md:py-8 mb-10 md:mb-0 pb-10">
-            <h1 className="sm:text-3xl text-2xl font-black my-4 title-font mb-2 text-gray-900">
+            <h1 className="sm:text-3xl text-2xl font-black font-raleway my-4 title-font mb-2 text-gray-900">
               Clients <span className="text-[#715BA8]">SAVE</span> over{" "}
               <span className="text-[#715BA8]">$15,000</span> a year with our
               proven strategies
@@ -26,73 +26,73 @@ function index() {
               <thead className="text-white">
                 <tr className="bg-[#715BA8] flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-5 text-left text-[#715BA8]">Data</th>
-                  <th className="p-5 text-left">Current Financial Situation</th>
-                  <th className="p-5 text-left">
+                  <th className="p-5 font-sans text-left">Current Financial Situation</th>
+                  <th className="p-5 font-sans text-left">
                     Your new financial situation
                   </th>
                 </tr>
                 <tr className="bg-[#715BA8] flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-5 text-left text-[#715BA8]">Data</th>
-                  <th className="p-5 text-left">Current Financial Situation</th>
-                  <th className="p-5 text-left">
+                  <th className="p-5 font-sans text-left">Current Financial Situation</th>
+                  <th className="p-5 font-sans text-left">
                     Your new financial situation
                   </th>
                 </tr>
                 <tr className="bg-[#715BA8] flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-5 text-left text-[#715BA8]">Data</th>
-                  <th className="p-5 text-left">Current Financial Situation</th>
-                  <th className="p-5 text-left">
+                  <th className="p-5 font-sans text-left">Current Financial Situation</th>
+                  <th className="p-5 font-sans text-left">
                     Your new financial situation
                   </th>
                 </tr>
                 <tr className="bg-[#715BA8] flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-5 text-left text-[#715BA8]">Data</th>
-                  <th className="p-5 text-left">Current Financial Situation</th>
-                  <th className="p-5 text-left">
+                  <th className="p-5 font-sans text-left">Current Financial Situation</th>
+                  <th className="p-5 font-sans text-left">
                     Your new financial situation
                   </th>
                 </tr>
                 <tr className="bg-[#715BA8] flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                   <th className="p-5 text-left text-[#715BA8]">Data</th>
-                  <th className="p-5 text-left">Current Financial Situation</th>
-                  <th className="p-5 text-left">
+                  <th className="p-5 font-sans text-left">Current Financial Situation</th>
+                  <th className="p-5 font-sans text-left">
                     Your new financial situation
                   </th>
                 </tr>
               </thead>
               <tbody className="flex-1 sm:flex-none">
                 <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                  <td className="p-5">1st Mortgage Payment</td>
-                  <td className="p-5 truncate">$2,000.00 a month</td>
-                  <td className="p-5 text-black hover:text-black hover:font-medium cursor-pointer">
+                  <td className="p-5 font-sans">1st Mortgage Payment</td>
+                  <td className="p-5 font-sans truncate">$2,000.00 a month</td>
+                  <td className="p-5 font-sans text-black hover:text-black hover:font-medium cursor-pointer">
                     $2,000.00 a month
                   </td>
                 </tr>
                 <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                  <td className="p-5">New Loan Payment</td>
-                  <td className="p-5 truncate">$0.00 a month</td>
-                  <td className="p-5 text-black hover:text-black hover:font-medium cursor-pointer">
+                  <td className="p-5 font-sans">New Loan Payment</td>
+                  <td className="p-5 font-sans truncate">$0.00 a month</td>
+                  <td className="p-5 font-sans text-black hover:text-black hover:font-medium cursor-pointer">
                     $415.00 a month
                   </td>
                 </tr>
                 <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                  <td className="p-5">Credit Card Debit</td>
-                  <td className="p-5 truncate">$1,250.00 a month</td>
-                  <td className="p-5 text-black hover:text-black hover:font-medium cursor-pointer">
+                  <td className="p-5 font-sans">Credit Card Debit</td>
+                  <td className="p-5 font-sans truncate">$1,250.00 a month</td>
+                  <td className="p-5 font-sans text-black hover:text-black hover:font-medium cursor-pointer">
                     No more credit card debt payments
                   </td>
                 </tr>
                 <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                  <td className="p-5">Automobile Payments</td>
-                  <td className="p-5 truncate">$750.00 a month</td>
-                  <td className="p-5 text-black hover:text-black hover:font-medium cursor-pointer">
+                  <td className="p-5 font-sans">Automobile Payments</td>
+                  <td className="p-5 font-sans truncate">$750.00 a month</td>
+                  <td className="p-5 font-sans text-black hover:text-black hover:font-medium cursor-pointer">
                     No more automobile payments
                   </td>
                 </tr>
                 <tr className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
-                  <td className="p-5">Total Payments</td>
-                  <td className="p-5 truncate">$3,975.00 a month</td>
-                  <td className="p-5 text-black hover:text-black hover:font-medium cursor-pointer">
+                  <td className="p-5 font-sans">Total Payments</td>
+                  <td className="p-5 font-sans truncate">$3,975.00 a month</td>
+                  <td className="p-5 font-sans text-black hover:text-black hover:font-medium cursor-pointer">
                     $2,415.00 a month
                   </td>
                 </tr>
@@ -101,12 +101,12 @@ function index() {
 
             {/* ******************************************************************* */}
 
-            <div className="bg-[#715BA8] border-[#715BA8] rounded-2xl">
+            <div className="bg-[#715BA8] mt-[20px] border-[#715BA8] rounded-2xl">
               <div className="flex flex-col items-center p-5 justify-center">
-                <h1 className="text-[16px] md:text-[28px] sm:text-[24px] text-white py-[5px] font-bold">
+                <h1 className="text-[16px] md:text-[28px] font-raleway sm:text-[24px] text-white py-[5px] font-bold">
                   Monthly Savings with Nuborrow $1,560.00
                 </h1>
-                <h1 className="text-[16px] md:text-[28px] sm:text-[24px] text-white py-[5px] font-bold">
+                <h1 className="text-[16px] font-raleway md:text-[28px] sm:text-[24px] text-white py-[5px] font-bold">
                   Yearly Savings with Nuborrow $18,720.00
                 </h1>
               </div>

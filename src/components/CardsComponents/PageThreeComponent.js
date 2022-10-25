@@ -9,7 +9,7 @@ function PageThreeComponent({
 }) {
   return (
     <>
-      <div className="sm:border-[#ECECEC] sm:border-[8px] rounded-3xl xs:border-[#ECECEC]">
+      <div className="sm:border-[#ECECEC] sm:bg-[#ffffff] sm:border-[8px] rounded-3xl xs:border-[#ECECEC]">
         <div className="font-bold mt-7 w-[90%] mx-auto md:text-2xl text-xl">
           How much do you think your home is worth?
         </div>

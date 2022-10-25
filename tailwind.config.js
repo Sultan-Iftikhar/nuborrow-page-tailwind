@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      railway: ["raleway"],
+      raleway: ["Raleway"],
+      sans:["Open Sans"]
     },
   },
   plugins: [require("tw-elements/dist/plugin")],

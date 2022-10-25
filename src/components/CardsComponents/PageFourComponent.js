@@ -9,7 +9,7 @@ function PageFourComponent({
 }) {
   return (
     <>
-      <div className="sm:border-[#ECECEC] sm:border-[8px] rounded-3xl xs:border-[#ECECEC]">
+      <div className="sm:border-[#ECECEC] sm:bg-[#ffffff] sm:border-[8px] rounded-3xl xs:border-[#ECECEC]">
         <div className="font-bold mt-7 w-[90%] mx-auto md:text-2xl text-xl">
           How much money do you need?
         </div>
@@ -21,7 +21,7 @@ function PageFourComponent({
           Question 4 of 5
         </div>
         <div className="w-[90%] mx-auto bg-gray-200 mt-2 h-2.5 #EDF3F3">
-          <div className="bg-[#715BA8] h-2.5" style={{ width: '45%' }} />
+          <div className="bg-[#715BA8] h-2.5" style={{ width: '80%' }} />
         </div>
         <div className="font-bold lg:text-2xl md:text-xl text-center mx-auto w-[90%] md:py-16 py-8">
           <h1>{_formatCurrency(cost)}</h1>
