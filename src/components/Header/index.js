@@ -126,7 +126,7 @@ function Index() {
   return (
     <>
       {/* ************************Header cards************************* */}
-      <section className="bg-[#FAF8FF]">
+      <section className="bg-[#FAF8FF] w-[100%]">
         <div className="container flex flex-wrap sm:w-[90%] md:h-[50%] sm:mx-auto m-auto px-5 py-5">
           <div className="lg:w-1/2 md:pr-12 md:py-8 mx-auto mb-10 md:mb-0 pb-10">
             {/* <PageOneComponent /> */}

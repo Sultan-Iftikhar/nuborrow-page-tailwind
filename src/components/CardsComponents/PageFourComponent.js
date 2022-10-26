@@ -37,12 +37,11 @@ function PageFourComponent({
           />
 
           <div
-            onClick={({ value = 5 }) => {
-              setopenComponent(value)
-            }}
             className="w-[100%] text-center m-auto"
           >
-            <button className="bg-[#715BA8] rounded-full md:text-xl md:font-bold text-[white] sm:py-[8px] sm:px-[40px] py-[5px] px-[35px] my-[40px] hover:bg-[#715BA8]-600 active:bg-[#715BA8]-700 focus:outline-none focus:ring focus:ring-violet-300">
+            <button onClick={({ value = 5 }) => {
+              setopenComponent(value)
+            }} className="bg-[#715BA8] rounded-full md:text-xl md:font-bold text-[white] sm:py-[8px] sm:px-[40px] py-[5px] px-[35px] my-[40px] hover:bg-[#715BA8]-600 active:bg-[#715BA8]-700 focus:outline-none focus:ring focus:ring-violet-300">
               Next
             </button>
           </div>

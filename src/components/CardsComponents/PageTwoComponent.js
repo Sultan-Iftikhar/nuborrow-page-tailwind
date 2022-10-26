@@ -20,26 +20,30 @@ function PageTwoComponent({setopenComponent, setPropertyType}) {
           <div className="bg-[#715BA8] h-2.5" style={{ width: "40%" }} />
         </div>
         <div className="flex cursor-pointer justify-center text-center m-5 flex-wrap">
+        <div onClick={()=>setPropertyType("Detached House")}>
         <Card
-        onClick={()=>setPropertyType("Detached House")}
         setopenComponent={setopenComponent}
         value={3}
         image={homebuildOne} content={strings.detached} />
+        </div>
+        <div onClick={()=>setPropertyType("Semi-Detached House")}>
         <Card 
-        onClick={()=>setPropertyType("Semi-Detached House")}
         setopenComponent={setopenComponent}
         value={3} 
         image={homebuildTwo} content={strings.semiDetached} />
+        </div>
+        <div onClick={()=>setPropertyType("Townhouse")}>
         <Card
-        onClick={()=>setPropertyType("Townhouse")}
         setopenComponent={setopenComponent}
         value={3} 
         image={homebuildThree} content={strings.town} />
+        </div>
+        <div onClick={()=>setPropertyType("Condo")}>
         <Card
-        onClick={()=>setPropertyType("Condo")}
         setopenComponent={setopenComponent}
         value={3} 
         image={buildFour} content={strings.Condo} />
+        </div>
         </div>
         {/* <div className="flex cursor-pointer m-5 flex-wrap">
           <div className="flex flex-col p-3 border-solid hover:shadow-md border-[#ECECEC] border-[8px] rounded-3xl">

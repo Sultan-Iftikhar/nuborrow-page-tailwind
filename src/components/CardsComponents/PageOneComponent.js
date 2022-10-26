@@ -20,31 +20,35 @@ function PageOneComponent({ setopenComponent, setProduct }) {
           <div className="bg-[#715BA8] h-2.5" style={{ width: '20%' }} />
         </div>
         <div className="flex cursor-pointer justify-center text-center m-5 flex-wrap">
+          <div onClick={() => setProduct('Home Equity Loan - Cash Out')}>
           <Card
-            onClick={() => setProduct('Home Equity Loan - Cash Out')}
             image={wallet}
             content={strings.wallet}
             setopenComponent={setopenComponent}
             value={2}
           />
+          </div>
+          <div onClick={()=>setProduct("Home Equity Loan Of Credit")}>
           <Card
-          onClick={()=>setProduct("Home Equity Loan Of Credit")}
           image={nuborrowcard} content={strings.strip}
           setopenComponent={setopenComponent}
           value={2}
           />
+          </div>
+          <div onClick={()=>setProduct("Debt Consolidation Home Equity Loan")} >
           <Card
-          onClick={()=>setProduct("Debt Consolidation Home Equity Loan")} 
           image={nuborrowcollection} content={strings.collection}
           setopenComponent={setopenComponent}
           value={2}
           />
+          </div>
+          <div onClick={()=>setProduct("Refinance My Current Mortgage")}>
           <Card
-          onClick={()=>setProduct("Refinance My Current Mortgage")}
           image={nuborrowbank} content={strings.bank}
           setopenComponent={setopenComponent}
           value={2}
           />
+          </div>
           {/* <div className="flex flex-col sm:p-6 m-5 border-solid hover:shadow-md border-[#ECECEC] border-[8px] rounded-3xl">
             <img className="sm:w-40 sm:h-20" src={wallet} />
             <div className="text-black py-4 text-center">content</div>
