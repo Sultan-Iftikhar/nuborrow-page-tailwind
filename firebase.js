@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCJARfEKv2QOnTIHbsA3-LJO2mPKrUXsLY",
-  authDomain: "nuborrow-landing-tailwind.firebaseapp.com",
-  projectId: "nuborrow-landing-tailwind",
-  storageBucket: "nuborrow-landing-tailwind.appspot.com",
-  messagingSenderId: "87563316766",
-  appId: "1:87563316766:web:e8c5e9513396447d5fc80f"
+  apiKey: "AIzaSyBE_tVZgz0fU8CvgD11h_432yaxpmNxZWc",
+  authDomain: "nb-web-276a1.firebaseapp.com",
+  projectId: "nb-web-276a1",
+  storageBucket: "nb-web-276a1.appspot.com",
+  messagingSenderId: "792532025722",
+  appId: "1:792532025722:web:362bedd9d4d2497fdf16c3"
 };
 
 // Initialize Firebase

@@ -5,7 +5,7 @@ function PageThreeComponent({
   setopenComponent,
   sethomeCost,
   home_value,
-  _formatCurrency,
+  formatCurrency,
 }) {
   return (
     <>
@@ -24,7 +24,7 @@ function PageThreeComponent({
           <div className="bg-[#715BA8] h-2.5" style={{ width: '45%' }} />
         </div>
         <div className="font-bold lg:text-2xl md:text-xl text-center mx-auto w-[90%] md:py-16 py-8">
-          <h1>{_formatCurrency(home_value)}</h1>
+          <h1>{formatCurrency(home_value)}</h1>
         </div>
         <div className="w-[90%] mx-auto">
           <PrettoSlider

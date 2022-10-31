@@ -20,6 +20,7 @@ function PageOneComponent({ setopenComponent, setProduct }) {
           <div className="bg-[#715BA8] h-2.5" style={{ width: '20%' }} />
         </div>
         <div className="flex cursor-pointer justify-center text-center m-5 flex-wrap">
+          <div className='sm:flex'>
           <div onClick={() => setProduct('Home Equity Loan - Cash Out')}>
           <Card
             image={wallet}
@@ -35,6 +36,8 @@ function PageOneComponent({ setopenComponent, setProduct }) {
           value={2}
           />
           </div>
+          </div>
+          <div className='sm:flex'>
           <div onClick={()=>setProduct("Debt Consolidation Home Equity Loan")} >
           <Card
           image={nuborrowcollection} content={strings.collection}
@@ -48,6 +51,7 @@ function PageOneComponent({ setopenComponent, setProduct }) {
           setopenComponent={setopenComponent}
           value={2}
           />
+          </div>
           </div>
           {/* <div className="flex flex-col sm:p-6 m-5 border-solid hover:shadow-md border-[#ECECEC] border-[8px] rounded-3xl">
             <img className="sm:w-40 sm:h-20" src={wallet} />

@@ -7,8 +7,8 @@ import location from '../../images/png/location.png'
 function index() {
   return (
     <>
-      <section className="body-font mt-[50px] w-[100%] bg-[#FAF8FF]">
-        <div className="container w-[90%] flex flex-wrap px-5 py-24 mx-auto items-center">
+      <section className="body-font w-full mt-[50px] bg-[#FAF8FF]">
+        <div className="w-[90%] flex flex-wrap px-5 py-24 mx-auto items-center">
           <div className="md:w-[60%] md:pr-12 md:py-8 md:mb-0 mb-10 pb-10 ">
             <img src={logo} className="h-20" />
             <h1 className="sm:text-xl text-xl mt-4 font-bold font-railway title-font mb-4 text-[#000000]">

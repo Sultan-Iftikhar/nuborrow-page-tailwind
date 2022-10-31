@@ -4,8 +4,8 @@ import navitem from "../../images/png/navitem.png";
 function index() {
   return (
     <>
-      <header className="text-gray-400 bg-[#ffffff] body-font">
-        <div className="container mx-auto flex justify-between p-5 md:flex-row items-center">
+      <header className="text-gray-400 w-full bg-[#ffffff] body-font">
+        <div className="mx-auto flex justify-between p-5 md:flex-row items-center">
           <div className="flex title-font font-medium items-center  mb-4 md:mb-0">
             <img src={logo} className="h-20" />
           </div>

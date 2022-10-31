@@ -23,7 +23,7 @@ function Index() {
   const [propertyType, setPropertyType] = useState()
   const [cost, setCost] = useState(25000)
   const [name, setName] = useState()
-  const [contact, setContact] = useState()
+  const [contact, setContact] = useState('')
   const [email, setEmail] = useState()
   const [address, setinpAddress] = useState()
   const [place, setPlace] = useState()
@@ -33,7 +33,7 @@ function Index() {
   const [home_value, sethomeCost] = useState(50000)
 
   // *********
-  const _formatCurrency = (home_value) => {
+  const formatCurrency = (home_value) => {
     return (
       '$' +
       parseFloat(home_value)
@@ -42,17 +42,51 @@ function Index() {
     )
   }
 
+  // *********
+  function phoneFormat(n) {
+    //returns (###) ###-####
+    let input = n.slice(2)
+    // let input = n
+    // input = input.replace(/\D/g, '')
+    // console.log(input)
+    var size = input.length
+    if (size > 0) {
+      input = '(' + input
+    }
+    if (size > 3) {
+      input = input.slice(0, 4) + ') ' + input.slice(4, 11)
+    }
+    if (size > 6) {
+      input = input.slice(0, 9) + '-' + input.slice(9)
+    }
+    return input
+    // console.log(input)
+  }
+  // *********
+
+  // *********
+
+  let formattedCostValue = formatCurrency(cost)
+  let formattedHomeValue = formatCurrency(home_value)
+
   const handleLandingPageData = async () => {
     // console.log("************data is handled**************")
 
     // *****************Phone number valid or note API*********************
 
+    // console.log(formatPhoneNumber(contact))
     console.log(product)
     console.log(propertyType)
-    console.log(cost)
-    console.log(home_value)
+
+    console.log(formatCurrency(cost))
+    console.log(formatCurrency(home_value))
+    console.log(formattedHomeValue)
+    console.log(formattedCostValue)
     console.log(name)
-    console.log(contact)
+    console.log(phoneFormat(contact))
+    // console.log(formated_phone)
+    // console.log(contact)
+    // console.log(fmtPhone)
     console.log(email)
     console.log(place)
     console.log(city)
@@ -71,36 +105,36 @@ function Index() {
     })
     // --------------------------------------
 
-    let formData = new FormData()
-    formData.append('place', place)
-    // formData.append("product_id", "4")
-    formData.append('name', name)
-    formData.append('email', email)
-    formData.append('phone', contact)
-    formData.append('product', product)
-    formData.append('city', city)
-    formData.append('state', state)
-    formData.append('zipCode', zipCode)
-    formData.append('money_need', `$${cost}`)
-    formData.append('home_value', `$${home_value}`)
-    formData.append('propertyType', propertyType)
+    // let formData = new FormData()
+    // formData.append('place', place)
+    // // formData.append("product_id", "4")
+    // formData.append('name', name)
+    // formData.append('email', email)
+    // formData.append('phone', phoneFormat(contact))
+    // formData.append('product', product)
+    // formData.append('city', city)
+    // formData.append('state', state)
+    // formData.append('zipCode', zipCode)
+    // formData.append('money_need', `${formattedCostValue}`)
+    // formData.append('home_value', `${formattedHomeValue}`)
+    // formData.append('propertyType', propertyType)
 
-    // *********************API starts**********************
+    // // *********************API starts**********************
 
-    try {
-      const data = await axios({
-        method: 'post',
-        url:
-          'https://corsproxyapi.herokuapp.com/https://dev.nu2morrow.com/crm/apis/lead/add_landingpage',
-        data: formData,
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
+    // try {
+    //   const data = await axios({
+    //     method: 'post',
+    //     url:
+    //       'https://corsproxyapi.herokuapp.com/https://dev.nu2morrow.com/crm/apis/lead/add_landingpage',
+    //     data: formData,
+    //     headers: { 'Content-Type': 'multipart/form-data' },
+    //   })
 
-      // console.log(data)
-    } catch (err) {
-      // console.log(err.message)
-    }
-    console.log(formData)
+    //   console.log(data)
+    // } catch (err) {
+    //   console.log(err.message)
+    // }
+    // console.log(formData)
 
     // *************************API ends*************************
 
@@ -120,14 +154,14 @@ function Index() {
     setzipCode('')
     sethomeCost('')
 
-    window.location.href = 'https://nuborrow.com/' //Will take you to Nuborrow Web App.
+    // window.location.href = 'https://nuborrow.com/' //Will take you to Nuborrow Web App.
   }
 
   return (
     <>
       {/* ************************Header cards************************* */}
-      <section className="bg-[#FAF8FF] w-[100%]">
-        <div className="container flex flex-wrap sm:w-[90%] md:h-[50%] sm:mx-auto m-auto px-5 py-5">
+      <section className="w-full bg-[#FAF8FF]">
+        <div className="flex flex-wrap sm:w-[90%] md:h-[50%] sm:mx-auto m-auto px-5 py-5">
           <div className="lg:w-1/2 md:pr-12 md:py-8 mx-auto mb-10 md:mb-0 pb-10">
             {/* <PageOneComponent /> */}
             {/* <PageTwoComponent /> */}
@@ -151,14 +185,14 @@ function Index() {
                 setopenComponent={setopenComponent}
                 sethomeCost={sethomeCost}
                 home_value={home_value}
-                _formatCurrency={_formatCurrency}
+                formatCurrency={formatCurrency}
               />
             ) : openComponent === 4 ? (
               <PageFourComponent
                 setopenComponent={setopenComponent}
                 setCost={setCost}
                 cost={cost}
-                _formatCurrency={_formatCurrency}
+                formatCurrency={formatCurrency}
               />
             ) : (
               <PageFiveComponent

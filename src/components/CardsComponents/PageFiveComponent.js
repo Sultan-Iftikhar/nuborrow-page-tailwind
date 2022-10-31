@@ -3,11 +3,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import PhoneInput from 'react-phone-number-input/input'
 import Swal from 'sweetalert2'
-import PlacesAutocomplete, {
-  geocodeByAddress,
-  geocodeByPlaceId,
-  getLatLng,
-} from 'react-places-autocomplete'
+// import PlacesAutocomplete, {
+//   geocodeByAddress,
+//   geocodeByPlaceId,
+//   getLatLng,
+//   searchOptions,
+// } from 'react-places-autocomplete'
+
+import Autocomplete from 'react-google-autocomplete'
 
 function PageFiveComponent({
   setName,
@@ -38,9 +41,12 @@ function PageFiveComponent({
   const [addressE, setAddressE] = useState('')
   const [addressError, setAddressError] = useState('')
 
+  // -------------------------------
+  // -------------------------------
   // phone validation
   const phoneNumberFunc = (n) => {
     // console.log(n)
+    // phoneFormat(n)
     setContact(n)
     setPhoneE(n)
     setPhoneError('')
@@ -82,28 +88,18 @@ function PageFiveComponent({
   // ************auto place API**********
   const handleSelect = async (value) => {
     console.log(value)
-    const results = await geocodeByAddress(value)
-    const ll = await getLatLng(results[0])
-    setAddress(value)
-    // const a = results[0].formatted_address.split(",")
-    // const place = a[0] // for place
-    // const city = a[1] // for city
+    // const results = await geocodeByAddress(value)
+    // const ll = await getLatLng(results[0])
 
-    // const b = results[0].address_components // for short name
-    // const short_name = b[b.length - 1].short_name
-
-    // console.log("place :", place)
-    // console.log("city :", city)
-    // console.log("country short_name :", short_name)
-    // console.log(results)
-    setCoordinate(ll)
+    // setCoordinate(ll)
 
     let address_country
     let postal_code
     let address_state
     let address_city
     let place
-    results[0].address_components.forEach((item) => {
+
+    value?.address_components?.forEach((item) => {
       const countryFound = item.types.find((e) => e === 'country')
       const postalFound = item.types.find((e) => e === 'postal_code')
       const placeFound = item.types.find((e) => e === 'route')
@@ -119,7 +115,7 @@ function PageFiveComponent({
         postal_code = item.long_name
       }
       if (stateFound) {
-        address_state = item.long_name
+        address_state = item.short_name
       }
       if (cityFound) {
         address_city = item.long_name
@@ -133,10 +129,10 @@ function PageFiveComponent({
     // console.log("address_state :", address_state ?? "")
     // console.log("address_city :", address_city ?? "")
     // console.log("place :", place ?? "")
-    setState(address_country)
+    setState(address_state)
     setzipCode(postal_code)
     setCity(address_city)
-    setPlace(`${place}, ${address_city}, ${postal_code}, ${address_country}`)
+    setPlace(`${place}, ${address_city}, ${postal_code}, ${address_state}`)
   }
   // ************auto place API**********
 
@@ -201,7 +197,6 @@ function PageFiveComponent({
 
   return (
     <>
-      {console.log('inside !!!!!!!!!!!!')}
       <div className="sm:border-[#ECECEC] sm:border-[8px] rounded-3xl xs:border-[#ECECEC]">
         <div className="font-bold mt-7 w-[90%] mx-auto md:text-2xl text-center text-xl">
           Amazing! You're no-cost reports are waiting for you.
@@ -233,18 +228,22 @@ function PageFiveComponent({
                 }}
                 className="bg-gray-50 border text-[12px] text-thin sm:w-[70%] m-auto drop-shadow-sm px-[50px] border-gray-300 text-gray-900 text-sm rounded-full focus:ring-[#715BA8] focus:border-[#715BA8] block w-full p-2.5  dark:border-[#EDF3F3] dark:placeholder-gray-300 dark:text-black dark:focus:ring-[#715BA8] dark:focus:border-[#715BA8]"
               />
-              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">{nameError}</div>
+              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">
+                {nameError}
+              </div>
             </div>
             <div className="mb-5">
               <PhoneInput
-              className="bg-gray-50 border text-[12px] text-thin sm:w-[70%] m-auto drop-shadow-sm px-[50px] border-gray-300 text-gray-900 text-sm rounded-full focus:ring-[#715BA8] focus:border-[#715BA8] block w-full p-2.5  dark:border-[#EDF3F3] dark:placeholder-gray-300 dark:text-black dark:focus:ring-[#715BA8] dark:focus:border-[#715BA8]"
+                className="bg-gray-50 border text-[12px] text-thin sm:w-[70%] m-auto drop-shadow-sm px-[50px] border-gray-300 text-gray-900 text-sm rounded-full focus:ring-[#715BA8] focus:border-[#715BA8] block w-full p-2.5  dark:border-[#EDF3F3] dark:placeholder-gray-300 dark:text-black dark:focus:ring-[#715BA8] dark:focus:border-[#715BA8]"
                 placeholder="Your Phone"
                 maxlength="14"
                 country="US"
                 value={phone}
                 onChange={phoneNumberFunc}
               />
-              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">{PhoneError}</div>
+              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">
+                {PhoneError}
+              </div>
             </div>
             <div className="mb-5">
               <input
@@ -260,11 +259,32 @@ function PageFiveComponent({
                 }}
                 className="bg-gray-50 border text-[12px] text-thin sm:w-[70%] m-auto drop-shadow-sm px-[50px] border-gray-300 text-gray-900 text-sm rounded-full focus:ring-[#715BA8] focus:border-[#715BA8] block w-full p-2.5  dark:border-[#EDF3F3] dark:placeholder-gray-300 dark:text-black dark:focus:ring-[#715BA8] dark:focus:border-[#715BA8]"
               />
-              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">{emailError}</div>
-              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">{validEmail}</div>
+              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">
+                {emailError}
+              </div>
+              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">
+                {validEmail}
+              </div>
             </div>
             <div className="mb-5">
-              <PlacesAutocomplete
+              <Autocomplete
+                apiKey="AIzaSyDKhj1caiJVMeNgBAqbOjV97q0oMyAuRiQ"
+                // style={{ width: '90%' }}
+                className="bg-gray-50 border text-[12px] text-thin sm:w-[70%] m-auto drop-shadow-sm px-[50px] border-gray-300 text-gray-900 text-sm rounded-full focus:ring-[#715BA8] focus:border-[#715BA8] block w-full p-2.5  dark:border-[#EDF3F3] dark:placeholder-gray-300 dark:text-black dark:focus:ring-[#715BA8] dark:focus:border-[#715BA8]"
+                onPlaceSelected={(place) => {
+                  handleSelect(place)
+                  setAddress(place?.formatted_address)
+                }}
+                placeholder="Your address(to make sure the home value is accurate)"
+                options={{
+                  types: ['geocode', 'establishment'],
+                  componentRestrictions: { country: 'ca' },
+                }}
+                // defaultValue={address}
+                onChange={chkAddressFieldEmpyOrField}
+                onSelect={handleSelect}
+              />
+              {/* <PlacesAutocomplete
                 className="bg-gray-50 border text-[12px] text-thin sm:w-[70%] m-auto drop-shadow-sm px-[50px] border-gray-300 text-gray-900 text-sm rounded-full focus:ring-[#715BA8] focus:border-[#715BA8] block w-full p-2.5  dark:border-[#EDF3F3] dark:placeholder-gray-300 dark:text-black dark:focus:ring-[#715BA8] dark:focus:border-[#715BA8]"
                 required
                 value={address}
@@ -288,13 +308,11 @@ function PageFiveComponent({
                       })}
                     />
                     <div
-                      className="autocomplete-dropdown-container"
+                      className="autocomplete-dropdown-container w-[70%] mx-auto"
                       style={{ border: '1px solid #fafafa' }}
                     >
                       {loading && (
-                        <div
-                          className="py-[5px] text-[12px] text-thin px-[10px] mt=[5px] border-solid text-[24px] border-[2px] border-[#fafafa]"
-                        >
+                        <div className="py-[5px] text-[11px] text-thin px-[10px] mt=[5px] border-solid text-[24px] border-[2px] border-[#fafafa]">
                           Loading...
                         </div>
                       )}
@@ -321,7 +339,7 @@ function PageFiveComponent({
                         return (
                           <div
                             {...getSuggestionItemProps(suggestion, {
-                              className:"text-[12px] font-thin text-left",
+                              className: 'text-[12px] font-thin text-left',
                               style,
                             })}
                           >
@@ -332,8 +350,10 @@ function PageFiveComponent({
                     </div>
                   </div>
                 )}
-              </PlacesAutocomplete>
-              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">{addressError}</div>
+              </PlacesAutocomplete> */}
+              <div className="text-red-700 text-left sm:w-[65%] mx-auto text-[12px] font-thin">
+                {addressError}
+              </div>
             </div>
           </form>
           <div className="w-[90%] mx-auto">
@@ -354,4 +374,4 @@ function PageFiveComponent({
   )
 }
 
-export default PageFiveComponent;
+export default PageFiveComponent
